@@ -5,7 +5,7 @@ services:
   api:
    labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.librechat.rule=Host(`your.domain.name`)"
+        - "traefik.http.routers.librechat.rule=Host(`pp-librechat-sslddc-eb3e29-178-156-141-32.traefik.me`)"
         - "traefik.http.routers.librechat.entrypoints=websecure"
         - "traefik.http.routers.librechat.tls.certresolver=leresolver"
         - "traefik.http.services.librechat.loadbalancer.server.port=3080"
@@ -76,3 +76,7 @@ services:
 
 volumes:
   pgdata2:
+
+networks:
+  librechat_default:
+    external: true
